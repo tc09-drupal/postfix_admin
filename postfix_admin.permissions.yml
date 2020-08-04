@@ -1,0 +1,4 @@
+administer postfix_admin:
+  title: 'Administer Postfix DB'
+  description: 'Access the Postfix administrative settings.'
+  restrict access: true

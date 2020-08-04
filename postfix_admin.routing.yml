@@ -1,0 +1,8 @@
+postfix_admin.domain:
+  path: '/postfix_admin/domain'
+  defaults:
+    _form: '\Drupal\postfix_admin\Form\DomainForm'
+    _title: 'Email Domain'
+  requirements:
+    _permission: 'administer postfix_admin'
+
