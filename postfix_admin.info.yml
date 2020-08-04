@@ -1,0 +1,6 @@
+name: Postfix MailDB Administration
+type: module
+core: '8.x'
+description: 'Administration tool used to administer the tables resides in a Drupal database'
+package: Mail
+version: 1.0
