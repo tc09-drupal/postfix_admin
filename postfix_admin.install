@@ -1,0 +1,80 @@
+<?php
+/**
+ * Implements hook_schema().
+ *
+ */
+function postfix_admin_schema() {
+  $schema['postfix_domain'] = array(
+    'description' => 'Stores supported email domain',
+    'fields' => array(
+      'domain' => array(
+        'description' => 'A domain name of a supported email domain.',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('domain'),
+  );
+
+  $schema['postfix_user'] = array(
+    'description' => 'Stores user email account',
+    'fields' => array(
+      'email' => array(
+        'description' => 'email account.',
+        'type' => 'varchar',
+        'length' => 190,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'domain' => array(
+        'description' => 'Domain name of the email account.',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'password' => array(
+        'description' => 'Password of the email account.',
+        'type' => 'varchar',
+        'length' => 110,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('email'),
+  );
+
+  $schema['postfix_alias'] = array(
+    'description' => 'Stores email alias',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for the record.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'source' => array(
+        'description' => 'source email account.',
+        'type' => 'varchar',
+        'length' => 190,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'destination' => array(
+        'description' => 'destination email account.',
+        'type' => 'varchar',
+        'length' => 190,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('id'),
+    'indexes' => array(
+      'source_idx' => array('source'),
+      'dest_idx' => array('destination'),
+    ),
+  );
+  return $schema;
+}
