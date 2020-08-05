@@ -1,5 +1,5 @@
 postfix_admin.domain:
-  path: '/postfix_admin/domain'
+  path: '/postfix_admin/domain/add'
   defaults:
     _form: '\Drupal\postfix_admin\Form\DomainForm'
     _title: 'Email Domain'
@@ -7,7 +7,7 @@ postfix_admin.domain:
     _permission: 'administer postfix_admin'
 
 postfix_admin.user:
-  path: '/postfix_admin/user'
+  path: '/postfix_admin/user/add'
   defaults:
     _form: '\Drupal\postfix_admin\Form\UserForm'
     _title: 'User Email'
@@ -15,7 +15,7 @@ postfix_admin.user:
     _permission: 'administer postfix_admin'
 
 postfix_admin.alias:
-  path: '/postfix_admin/alias'
+  path: '/postfix_admin/alias/add'
   defaults:
     _form: '\Drupal\postfix_admin\Form\AliasForm'
     _title: 'Email Alias'
