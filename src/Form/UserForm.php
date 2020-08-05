@@ -30,12 +30,14 @@ class UserForm extends FormBase {
       '#description' => t("Email Address"),
       '#required' => TRUE,
     );
+    $select = Database::getConnection()->select('postfix_domain', 'r');
+    $select->fields('r', array('domain'));
+    $results = $select->execute()->fetchCol();
     $form['domain'] = array(
       '#title' => t('Domain Name'),
-      '#type' => 'textfield',
-      '#size' => 25,
+      '#type' => 'select',
+      '#options' => $results,
       '#description' => t("Email Domain Name"),
-      '#required' => TRUE,
     );
     $form['password'] = array(
       '#title' => t('Password'),
