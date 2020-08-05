@@ -6,3 +6,10 @@ postfix_admin.domain:
   requirements:
     _permission: 'administer postfix_admin'
 
+postfix_admin.user:
+  path: '/postfix_admin/user'
+  defaults:
+    _form: '\Drupal\postfix_admin\Form\UserForm'
+    _title: 'User Email'
+  requirements:
+    _permission: 'administer postfix_admin'
